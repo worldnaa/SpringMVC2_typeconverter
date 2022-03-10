@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<ul>
+    <li>${form.number}: <span th:text="${form.number}" ></span></li> <!-- 포멧 적용X -->
+    <li>${{form.number}}: <span th:text="${{form.number}}" ></span></li> <!-- 포멧 적용O -->
+    <li>${form.localDateTime}: <span th:text="${form.localDateTime}" ></span></li> <!-- 포멧 적용X -->
+    <li>${{form.localDateTime}}: <span th:text="${{form.localDateTime}}" ></span></li> <!-- 포멧 적용O -->
+</ul>
+</body>
+</html>

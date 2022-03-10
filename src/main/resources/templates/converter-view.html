@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<!--
+- 변수표현식      : ${...}
+- 컨버전서비스적용 : ${{...}}
+- 타임리프는 ${{...}} 를 사용하면 자동으로 컨버전서비스를 사용해서 변환된 결과를 출력해준다.
+- 물론 스프링과 통합되어서 스프링이 제공하는 컨버전서비스를 사용하므로, 우리가 등록한 컨버터들을 사용할 수 있다. -->
+<ul>
+    <li>${number}: <span th:text="${number}" ></span></li>     <!-- 타임리프가 숫자를 문자로 자동으로 변환해준다 -->
+    <li>${{number}}: <span th:text="${{number}}" ></span></li> <!-- 타임리프는 텍스트로 출력해야 하므로, IntegerToStringConverter 호출 -->
+    <li>${ipPort}: <span th:text="${ipPort}" ></span></li>     <!-- 객체를 그냥 출력하면, toString 한 결과 출력 됨 -->
+    <li>${{ipPort}}: <span th:text="${{ipPort}}" ></span></li> <!-- 타임리프는 텍스트로 출력해야 하므로, IpPortToStringConverter 호출 -->
+</ul>
+</body>
+</html>
